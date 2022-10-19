@@ -2,7 +2,7 @@
 Affichage des disponibilités et des prix du carburant en France.
 
 # Version Automatique Discord
-Envoie de message en Webhook Discord automatiquement si il y a eu un approvisionnement dans la(les) ville(s) sellectionée(s)
+Envoie de messages en Webhook Discord automatiquement s'il y a eu un approvisionnement dans la(les) ville(s) sellectionée(s)<br>
 Script à éxecuter en cronjob tous les 10 minutes (taux de raffraichissement des données)
 
 # Version Interactive CLI
