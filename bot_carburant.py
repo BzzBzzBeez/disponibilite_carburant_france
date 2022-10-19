@@ -4,7 +4,6 @@
 #Made by BzzBzz - 18/10/2022
 
 from xml.dom import minidom
-from time import sleep
 import os
 import wget
 import shutil
