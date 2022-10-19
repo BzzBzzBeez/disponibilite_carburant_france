@@ -1,0 +1,4 @@
+minidom-ext==0.0.5
+wget==3.2
+pytest-shutil==1.7.0
+discord_webhook==0.17.0
