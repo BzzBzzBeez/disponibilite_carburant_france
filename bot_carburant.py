@@ -66,7 +66,7 @@ print("\n")
 #Dezipage fichier
 shutil.unpack_archive("PrixCarburants_instantane.zip")
 
-#Récupération Prix Carburants Bois d'Arcy
+#Récupération Prix Carburants
 doc = minidom.parse("PrixCarburants_instantane.xml")
 pdvs = doc.getElementsByTagName("pdv")
 
