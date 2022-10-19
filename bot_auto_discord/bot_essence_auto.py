@@ -27,15 +27,15 @@ local_file="PrixCarburants_instantane.zip"
 wget.download(remote_url,local_file)
 print("\n")
 
+#Dezipage fichier
+shutil.unpack_archive("PrixCarburants_instantane.zip")
+
 #Check présence fichier old (Sinon renommer en old)
 if not os.path.exists(CONST_NEW_NAME):
     print("Ancien fichier non présent, relance dans 10 minutes...")
     sys.exit()
 else:
     os.rename(CONST_NEW_NAME,CONST_OLD_NAME)
-
-#Dezipage fichier
-shutil.unpack_archive("PrixCarburants_instantane.zip")
 
 #Récupération du Code Postal
 if os.path.exists("info.txt"):
@@ -101,4 +101,4 @@ date_time = now.strftime("%H:%M:%S -- %m/%d/%Y")
 print(date_time + "\n")
 
 liste_carb = "```" + liste_carb #Mise en forme discord
-liste_carb += "```<<@PUT_DISC_USER_ID>>" #Put User ID to be tag
+liste_carb += "```<@259029103716466688>" #Put User ID to be tag
