@@ -15,9 +15,23 @@ CONST_OLD_NAME = "PrixCarbuOLD.xml"
 CONST_NEW_NAME = "PrixCarburants_instantane.xml"
 
 
+#Check présence fichier old
+if not os.path.exists(CONST_NEW_NAME):
+    remote_url="https://donnees.roulez-eco.fr/opendata/instantane"
+    local_file="PrixCarburants_instantane.zip"
+    wget.download(remote_url,local_file)
+    print("\n")
+#Dézipe
+    shutil.unpack_archive("PrixCarburants_instantane.zip")
+#Supprimer fichier zip
+    if os.path.exists("PrixCarburants_instantane.zip"):
+        os.remove("PrixCarburants_instantane.zip")
+    print("Ancien fichier non présent, relance dans 10 minutes...")
+    sys.exit()
+else:
+    os.rename(CONST_NEW_NAME,CONST_OLD_NAME)
+
 #Supprimer les anciens fichiers
-if os.path.exists("PrixCarburants_instantane.zip"):
-    os.remove("PrixCarburants_instantane.zip")
 if os.path.exists("PrixCarburants_instantane.xml"):
     os.remove("PrixCarburants_instantane.xml")
 
@@ -27,15 +41,10 @@ local_file="PrixCarburants_instantane.zip"
 wget.download(remote_url,local_file)
 print("\n")
 
-#Dezipage fichier
+#Dezipage et suppression fichier
 shutil.unpack_archive("PrixCarburants_instantane.zip")
-
-#Check présence fichier old (Sinon renommer en old)
-if not os.path.exists(CONST_NEW_NAME):
-    print("Ancien fichier non présent, relance dans 10 minutes...")
-    sys.exit()
-else:
-    os.rename(CONST_NEW_NAME,CONST_OLD_NAME)
+if os.path.exists("PrixCarburants_instantane.zip"):
+    os.remove("PrixCarburants_instantane.zip")
 
 #Récupération du Code Postal
 if os.path.exists("info.txt"):
@@ -101,4 +110,4 @@ date_time = now.strftime("%H:%M:%S -- %m/%d/%Y")
 print(date_time + "\n")
 
 liste_carb = "```" + liste_carb #Mise en forme discord
-liste_carb += "```<@259029103716466688>" #Put User ID to be tag
+liste_carb += "```<PUT_DISC_USER_ID>" #Put User ID to be tag
