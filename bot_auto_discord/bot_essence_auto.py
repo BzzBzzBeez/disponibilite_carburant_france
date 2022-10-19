@@ -95,11 +95,11 @@ diff = set(NEW_tab).difference(OLD_tab)
 for i in diff:
     liste_carb += (str(i) + "\n")
 
-#Envoie sur le channel Discord si ajout d'un carburant
+#Check si liste retournée est vide
+ok = 0
 if not liste_carb == "":
     print(liste_carb)
-    webhook = DiscordWebhook(url=url_api, content=liste_carb)
-    response = webhook.execute()
+    ok = 1
 else:
     print("Il n'y a pas eu d'ajout de carburant :'(")
 
@@ -109,5 +109,9 @@ date_time = now.strftime("%H:%M:%S -- %m/%d/%Y")
 
 print(date_time + "\n")
 
-liste_carb = "```" + liste_carb #Mise en forme discord
-liste_carb += "```<PUT_DISC_USER_ID>" #Put User ID to be tag
+#Envoie message discord
+if ok:
+    liste_carb = "```" + liste_carb #Mise en forme discord
+    liste_carb += "```<@PUT_DISC_USER_ID>" #Put User ID to be tag
+    webhook = DiscordWebhook(url=url_api, content=liste_carb)
+    response = webhook.execute()
