@@ -1,4 +1,4 @@
-# disponibilite_carburant_france
+# Disponibilité Carburants - France
 Affichage des disponibilités et des prix du carburant en France.
 Script Interactif CLI
 
