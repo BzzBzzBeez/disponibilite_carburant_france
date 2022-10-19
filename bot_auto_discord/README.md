@@ -2,7 +2,7 @@
 Envoie de messages en Webhook Discord automatiquement s'il y a eu un approvisionnement dans la(les) ville(s) sellectionée(s)<br>
 Script à mettre dans un cronjob pour éxecution tout les X temps<br>
 Exemple (5 mins):
-```*/5 * * * * /usr/bin/python3.9 /home/nelson/BotEssence/bot_carb_auto.py >> /home/nelson/BotEssence/logbot.log```
+```*/5 * * * * /usr/bin/python3.9 /home/user/folder/bot_carb_auto.py >> /home/user/folder/logbot.log```
 
 # Important
 Ajouter un fichier info.txt dans le repertoire du script avec les codes postaux des villes qui vous intéressent, exemple :<br>
